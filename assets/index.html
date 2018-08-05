@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Schedule</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+
+                <h1 class="text-center"><span id="train"> Train Schedule</span></h1>
+            <h2>Current Time: <span id="currentTime"></span></h2>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="title"><strong>Current Train Schedule</strong></h2>
+					</div>
+					<div class="panel-body">
+						<table class="table table-hover" id='trainTable'>
+							<thead>
+								<tr>
+									<th>Train Name</th>
+									<th>Destination</th>
+									<th>Frequency</th>
+									<th>Next Arrival</th>
+									<th>Minutes Away</th>
+								</tr>
+							</thead>
+									<tbody id="trainTable"></tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Add Train</strong></h3>
+					</div>
+
+					<div class="panel-body">
+						<form>
+							<div class="form-group">
+								<label for="">Train Name</label>
+								<input type="text" class="form-control" id="trainnameInput">
+							</div>
+
+							<div class="form-group">
+								<label for="">Destination</label>
+								<input type="text" class="form-control" id="destinationInput">
+							</div>
+
+							<div class="form-group">
+								<label for="">First Train Time (HH:mm - military time)</label>
+								<input type="text" class="form-control" id="firsttraintimeInput">
+							</div>
+
+							<div class="form-group">
+								<label for="">Frequency (min)</label>
+								<input type="text" class="form-control" id="frequencyInput">
+							</div>
+                            
+							
+             <button type="submit" class="btn btn-default" id="submit">Update</button>
+
+						<button type="submit" class="btn btn-default" id="removeTrain">Remove</button>
+
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/javascript/app.js"></script>
+</body>
+</html>
